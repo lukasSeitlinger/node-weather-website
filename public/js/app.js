@@ -1,4 +1,3 @@
-
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const messageOne = document.querySelector('#message-1')
@@ -9,7 +8,7 @@ messageTwo.textContent = ""
 weatherForm.addEventListener("submit", (e) => {
     e.preventDefault()
 
-    const searchPath = 'http://localhost:3000/weather'+
+    const searchPath = '/weather'+
         '?address='+search.value
 
     messageOne.textContent = "Loading..."

@@ -8,6 +8,8 @@ import { fileURLToPath } from 'url'
 
 const app = express()
 
+const port = process.env.PORT || 3000
+
 //View config for HandleBars
 const viewsPath = fileURLToPath(new URL('../templates/views', import.meta.url))
 console.log(viewsPath)
@@ -20,9 +22,6 @@ hbs.registerPartials(partialsPath)
 //Static directory setup
 const staticResourcePath = fileURLToPath(new URL('../public', import.meta.url))
 app.use(express.static(staticResourcePath))
-
-
-
 
 app.get("", (req,res) => {
     res.render("index", {
@@ -107,6 +106,6 @@ app.get('*', (req, res) => {
 
 // app.com
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
