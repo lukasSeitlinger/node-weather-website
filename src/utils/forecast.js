@@ -26,7 +26,11 @@ export const forecast= function(latitude, longitude, callback) {
             let desc = currentWeather.weather_descriptions[0]
             let currentTemperature = currentWeather.temperature
             let feelsLike = currentWeather.feelslike
-            callback(undefined, desc + ". It is currently " + currentTemperature + "°C out. It feels like "+feelsLike+"°C")
+            let humidity = currentWeather.humidity
+            callback(undefined, desc + 
+                ". It is currently " + currentTemperature + "°C out. " +
+                "It feels like "+feelsLike+"°C. " + 
+                "The humidity is " + humidity + "%.")
         }
     })
 }
